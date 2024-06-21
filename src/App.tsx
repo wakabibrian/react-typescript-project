@@ -3,7 +3,7 @@ import Section from "./components/Section";
 // import Counter from "./components/Counter";
 import List from "./components/List";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface User {
   id: number;
@@ -13,7 +13,16 @@ interface User {
 function App() {
   // const [count, setCount] = useState<number>(1);
   const [count, setCount] = useState<number>(0);
-  const [user, setUser] = useState<User[] | null>(null);
+  const [users, setUsers] = useState<User[] | null>(null);
+
+  useEffect(() => {
+    console.log("Mounting");
+    console.log("Users: ", users);
+
+    return () => {
+      console.log("unmounting");
+    };
+  }, [users]);
 
   return (
     <>
