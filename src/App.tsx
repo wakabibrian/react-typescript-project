@@ -8,6 +8,7 @@ import {
   useState,
   useCallback,
   useMemo,
+  useRef,
   MouseEvent,
   KeyboardEvent,
 } from "react";
@@ -30,6 +31,11 @@ function App() {
   // const [count, setCount] = useState<number>(1);
   const [count, setCount] = useState<number>(0);
   const [users, setUsers] = useState<User[] | null>(null);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  console.log(inputRef?.current);
+  console.log(inputRef?.current?.value);
 
   useEffect(() => {
     console.log("Mounting");
@@ -61,6 +67,7 @@ function App() {
       <h1>{count}</h1>
       <button onClick={addTwo}>Add</button>
       <h2>{result}</h2>
+      <input ref={inputRef} type="text" />
     </>
   );
 }
