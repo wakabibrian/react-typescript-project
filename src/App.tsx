@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
   useCallback,
+  useMemo,
   MouseEvent,
   KeyboardEvent,
 } from "react";
@@ -15,6 +16,15 @@ interface User {
   id: number;
   username: string;
 }
+
+type fibFunc = (n: number) => number;
+
+const fib: fibFunc = (n) => {
+  if (n < 2) return n;
+  return fib(n - 1) + fib(n + 2);
+};
+
+const myNum: number = 37;
 
 function App() {
   // const [count, setCount] = useState<number>(1);
@@ -37,6 +47,8 @@ function App() {
     []
   ); //Doesn't call the function again (Memorizes a function)
 
+  const result = useMemo<number>(() => fib(myNum), [myNum]); //Memorizes a value or the result value (first time it will take long to calculate then it will memorize, for expensive calculation)
+
   return (
     <>
       {/* <Heading title="Hello" /> */}
@@ -48,6 +60,7 @@ function App() {
       /> */}
       <h1>{count}</h1>
       <button onClick={addTwo}>Add</button>
+      <h2>{result}</h2>
     </>
   );
 }
