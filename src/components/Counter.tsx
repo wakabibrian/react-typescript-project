@@ -6,6 +6,11 @@ type ChildrenType = {
 
 const initState = { count: 0 };
 
+const enum REDUCER_ACTION_TYPE {
+  INCREMENT,
+  DECREMENT,
+}
+
 const Counter = ({ children }: ChildrenType) => {
   const [count, setCount] = useState<number>(1);
 
