@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/wakabibrian/react-typescript-project/compare/v0.0.3...v0.0.4) (2024-06-24)
+
+
+### Features
+
+* Add  Payload ([59bc734](https://github.com/wakabibrian/react-typescript-project/commit/59bc734cc3107ad8b5ca70a5848fb0355f504a3b))
+* Add enum - useReducer ([a99876e](https://github.com/wakabibrian/react-typescript-project/commit/a99876e7fe4a17ee1aac5b330b91333b99d6dd1b))
+* Add initial state - useReducer ([10c4a26](https://github.com/wakabibrian/react-typescript-project/commit/10c4a26dac39d0b9da025da4054f0ab96c77c85f))
+* Add Reducer Action ([a0cb91a](https://github.com/wakabibrian/react-typescript-project/commit/a0cb91a6812f75649563bef741b39ec74d671d82))
+* Add reducer function ([b9d2051](https://github.com/wakabibrian/react-typescript-project/commit/b9d205103e9444f08fb70b429ceda73a8a715808))
+* Refactoring from useState to useReducer ([9517346](https://github.com/wakabibrian/react-typescript-project/commit/95173465243b72094285895da6e0d355c3d554a9))
+
 ### [0.0.3](https://github.com/wakabibrian/react-typescript-project/compare/v0.0.2...v0.0.3) (2024-06-22)
 
 
