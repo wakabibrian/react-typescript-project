@@ -1,6 +1,5 @@
 // import Heading from "./components/Heading";
 // import Section from "./components/Section";
-import { useState } from "react";
 import Counter from "./components/Counter";
 // import List from "./components/List";
 
@@ -29,7 +28,7 @@ import Counter from "./components/Counter";
 // const myNum: number = 37;
 
 function App() {
-  const [count, setCount] = useState<number>(1);
+  // const [count, setCount] = useState<number>(1);
   // const [count, setCount] = useState<number>(0);
   // const [users, setUsers] = useState<User[] | null>(null);
 
@@ -60,7 +59,9 @@ function App() {
     <>
       {/* <Heading title="Hello" /> */}
       {/* <Section title="Different Title">This is my section</Section> */}
-      <Counter setCount={setCount}>The Count is {count}</Counter>
+      <>
+        <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
+      </>
       {/* <List
         items={["🍵 Coffee", "🌮 Tacos", "💻 Code"]}
         render={(item: string) => <span className="gold">{item}</span>}

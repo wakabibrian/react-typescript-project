@@ -1,16 +1,22 @@
-import { ReactNode } from "react";
+import { ReactNode, useState, useReducer } from "react";
 
-type CounterProps = {
-  children: ReactNode;
-  setCount: React.Dispatch<React.SetStateAction<number>>;
+type ChildrenType = {
+  children: (num: number) => ReactNode;
 };
 
-const Counter = ({ children, setCount }: CounterProps) => {
+const initState = { count: 0 };
+
+const Counter = ({ children }: ChildrenType) => {
+  const [count, setCount] = useState<number>(1);
+
+  const increment = () => setCount((prev) => prev + 1);
+  const decrement = () => setCount((prev) => prev - 1);
+
   return (
     <>
-      <h1>{children}</h1>
-      <button onClick={() => setCount((prev) => prev + 1)}>+</button>
-      <button onClick={() => setCount((prev) => prev - 1)}>-</button>
+      <h1>{children(count)}</h1>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
     </>
   );
 };
