@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/wakabibrian/react-typescript-project/compare/v0.0.4...v0.0.5) (2024-06-26)
+
+
+### Features
+
+* Add Context Provider ([7e13480](https://github.com/wakabibrian/react-typescript-project/commit/7e134805728b02667c3dbbca0da386af6305940a))
+* Add custom hooks to deliver context ([5d5bf65](https://github.com/wakabibrian/react-typescript-project/commit/5d5bf6573621cb89b8e5fd7e759a2a11edac314a))
+* Add useCallback ([3e3052c](https://github.com/wakabibrian/react-typescript-project/commit/3e3052c310b0c5acc12205d8ebd48ceb86bbdbc6))
+* Apply the Provider ([c8141c2](https://github.com/wakabibrian/react-typescript-project/commit/c8141c230d0593946620c554f3e5c94fb8559247))
+* Create Context with initial context state ([108792e](https://github.com/wakabibrian/react-typescript-project/commit/108792e61b937d2f5566079971a70ee403ed6ae0))
+* Create useCounterContext hook and type ([28bffeb](https://github.com/wakabibrian/react-typescript-project/commit/28bffeb57199ddfce83019c3ee5469eafb4926c7))
+
 ### [0.0.4](https://github.com/wakabibrian/react-typescript-project/compare/v0.0.3...v0.0.4) (2024-06-24)
 
 
