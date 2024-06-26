@@ -1,6 +1,8 @@
 // import Heading from "./components/Heading";
 // import Section from "./components/Section";
 import Counter from "./components/Counter";
+import { CounterProvider } from "./context/CounterContext";
+import { initState } from "./context/CounterContext";
 // import List from "./components/List";
 
 // import {
@@ -60,7 +62,9 @@ function App() {
       {/* <Heading title="Hello" /> */}
       {/* <Section title="Different Title">This is my section</Section> */}
       <>
-        <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
+        <CounterProvider count={initState.count} text={initState.text}>
+          <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
+        </CounterProvider>
       </>
       {/* <List
         items={["🍵 Coffee", "🌮 Tacos", "💻 Code"]}

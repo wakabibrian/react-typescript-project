@@ -4,6 +4,7 @@ import {
   ChangeEvent,
   ReactElement,
   useCallback,
+  useContext,
 } from "react";
 
 type StateType = {
@@ -51,7 +52,10 @@ const useCounterContext = (initState: StateType) => {
   );
 
   const handleTextInput = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: REDUCER_ACTION_TYPE.NEW_INPUT, payload: e.target.value });
+    dispatch({
+      type: REDUCER_ACTION_TYPE.NEW_INPUT,
+      payload: e.target.value,
+    });
   }, []);
 
   return { state, increment, decrement, handleTextInput };
@@ -66,19 +70,17 @@ const initContextState: UseCounterContextType = {
   handleTextInput: (e: ChangeEvent<HTMLInputElement>) => {},
 };
 
-export const CounterContext = createContext<UseCounterContextType>;
+export const CounterContext =
+  createContext<UseCounterContextType>(initContextState);
 
 type ChildrenType = {
-  children?: ReactElement | undefined;
+  children?: ReactElement | ReactElement[] | undefined;
 };
 
-export const CounterProvider = ({
-  children,
-  ...initState
-}: ChildrenType & StateType): ReactElement => {
+export const CounterProvider = ({ children }: ChildrenType): ReactElement => {
   return (
     <CounterContext.Provider value={useCounterContext(initState)}>
-      children
+      {children}
     </CounterContext.Provider>
   );
 };
