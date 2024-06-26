@@ -44,3 +44,14 @@ const useCounterContext = (initState: StateType) => {
 
   return { state, increment, decrement, handleTextInput };
 };
+
+type UseCounterContextType = ReturnType<typeof useCounterContext>;
+
+const initContextState: UseCounterContextType = {
+  state: initState,
+  increment: () => {},
+  decrement: () => {},
+  handleTextInput: (e: ChangeEvent<HTMLInputElement>) => {},
+};
+
+export const CounterContext = createContext<UseCounterContextType>;
